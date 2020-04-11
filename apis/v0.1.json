@@ -1,0 +1,135 @@
+{
+    "version": "0.1",
+    "routes": {
+        ":model/": {
+            "put": {
+                "handler": {
+                    "group": "GenericApi",
+                    "action": "create",
+                    "mapping": [
+                        "ctx",
+                        "model",
+                        "data"
+                    ]
+                },
+                "params": {
+                    "url": {
+                        "model": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    "body": {
+                        "data": {
+                            "type": "object",
+                            "required": true
+                        }
+                    }
+                }
+            },
+            "post": {
+                "handler": {
+                    "group": "GenericApi",
+                    "action": "find",
+                    "mapping": [
+                        "ctx",
+                        "model",
+                        "query"
+                    ]
+                },
+                "params": {
+                    "url": {
+                        "model": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    "body": {
+                        "query": {
+                            "type": "object",
+                            "required": true
+                        }
+                    }
+                }
+            }
+        },
+        ":model/:id": {
+            "get": {
+                "handler": {
+                    "group": "GenericApi",
+                    "action": "get",
+                    "mapping": [
+                        "ctx",
+                        "model",
+                        "id"
+                    ]
+                },
+                "params": {
+                    "url": {
+                        "model": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "id": {
+                            "type": "string",
+                            "required": true
+                        }
+                    }
+                }
+            },
+            "post": {
+                "handler": {
+                    "group": "GenericApi",
+                    "action": "update",
+                    "mapping": [
+                        "ctx",
+                        "model",
+                        "id",
+                        "data"
+                    ]
+                },
+                "params": {
+                    "url": {
+                        "model": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "id": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    "body": {
+                        "data": {
+                            "type": "object",
+                            "required": true
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "handler": {
+                    "group": "GenericApi",
+                    "action": "delete",
+                    "mapping": [
+                        "ctx",
+                        "model",
+                        "id"
+                    ]
+                },
+                "params": {
+                    "url": {
+                        "model": {
+                            "type": "string",
+                            "required": true
+                        },
+                        "id": {
+                            "type": "string",
+                            "required": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
