@@ -34,7 +34,9 @@
                     "mapping": [
                         "ctx",
                         "model",
-                        "query"
+                        "query",
+                        "page",
+                        "limit"
                     ]
                 },
                 "params": {
@@ -48,6 +50,14 @@
                         "query": {
                             "type": "object",
                             "required": true
+                        },
+                        "page": {
+                            "type": "number",
+                            "default": 0
+                        },
+                        "limit": {
+                            "type": "number",
+                            "default": 20
                         }
                     }
                 }
@@ -77,7 +87,7 @@
                     }
                 }
             },
-            "post": {
+            "patch": {
                 "handler": {
                     "group": "GenericApi",
                     "action": "update",
